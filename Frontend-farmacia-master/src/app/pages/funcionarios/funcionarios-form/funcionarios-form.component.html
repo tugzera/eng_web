@@ -1,0 +1,93 @@
+<div class="row">
+  <form class="col s12" [formGroup]="form">
+    <div class="row">
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Nome'" [validate]="true" [dataError]="'Name is invalid'"
+            [dataSuccess]="'Name is valid'" id="name-input" placeholder="Enter your name" length="150" type="text"
+            formControlName="nome">
+        </mz-input-container>
+      </div>
+
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Cargo'" [validate]="true" [dataError]="'cargo is invalid'"
+            [dataSuccess]="'cargo is valid'" id="cargo-input" placeholder="Enter your cargo" 
+            formControlName="cargo">
+        </mz-input-container>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="input-field col s4">
+        <mz-input-container>
+
+          <input mz-input [label]="'Telefone'" [validate]="true" [dataError]="'Telefone is invalid'"
+            [dataSuccess]="'Telefone is valid'" id="telefone-input" placeholder="Enter your telefone"
+            formControlName="telefone">
+        </mz-input-container>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Email'" [validate]="true" [dataError]="'Email is invalid'"
+            [dataSuccess]="'Email is valid'" id="email-input" placeholder="Enter your email" type="email"
+            formControlName="email">
+        </mz-input-container>
+      </div>
+
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Senha'" [validate]="true" [dataError]="'password is invalid'"
+            [dataSuccess]="'password is valid'" id="password-input" placeholder="Enter your password" type="password"
+            formControlName="password">
+        </mz-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <p>
+        <label>
+          <mz-checkbox-container>
+            <input mz-checkbox [label]="'Ativo'" id="checkbox-id" type="checkbox" formControlName="status">
+          </mz-checkbox-container>
+        </label>
+      </p>
+
+      <mz-switch-container>
+        <input mz-switch id="switch-id" [off]="'Padrão'" [on]="'Administrador'" type="checkbox" formControlName="isAdmin">
+      </mz-switch-container>
+    </div>
+
+  </form>
+
+</div>
+
+
+<div>
+  <button class="btn waves-effect waves-light red" mz-button (click)="bottomSheetModal.openModal()">
+    <i class="material-icons right">arrow_back</i>
+  </button>
+  <mz-modal #bottomSheetModal [fixedFooter]="true" [bottomSheet]="true" [options]="modalOptions">
+    <mz-modal-header>
+      <h4>Voltar para listagem de Laboratórios</h4>
+    </mz-modal-header>
+    <mz-modal-content>
+      Deseja voltar sem salvar este item?
+    </mz-modal-content>
+    <mz-modal-footer>
+      <button mz-button [flat]="true" mz-modal-close>Continuar nesta Página</button>
+      <button mz-button [flat]="true" mz-modal-close (click)="voltar()">Voltar</button>
+    </mz-modal-footer>
+  </mz-modal>
+
+  <button class="btn waves-effect waves-light right" type="submit" name="action" (click)="salvar()"
+    [disabled]="!form.valid">Salvar
+    <i class="material-icons right">save</i>
+  </button>
+</div>

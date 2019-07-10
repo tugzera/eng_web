@@ -1,0 +1,90 @@
+<div class="row">
+  <form class="col s12" [formGroup]="formProduto">
+    <div class="row">
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Código'" [validate]="true" [dataError]="'cod is invalid'"
+            [dataSuccess]="'cod is valid'" id="cod-input" placeholder="Enter your cod" length="150" type="text"
+            formControlName="codigo">
+        </mz-input-container>
+      </div>
+
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Qtd'" [validate]="true" [dataError]="'qtd is invalid'"
+            [dataSuccess]="'qtd is valid'" id="qtd-input" placeholder="Enter with qtd" type="number"
+            formControlName="qtd">
+        </mz-input-container>
+      </div>
+
+    </div>
+    <div class="row">
+        <mz-badge
+        [value]="valorTotal()"
+        [caption]="'BRL'"
+        [badgeClass]="'blue'"
+        [new]="true">
+        </mz-badge>
+    </div>
+
+    <button class="btn waves-effect waves-light right" type="submit" name="action" (click)="adicionar()"
+    [disabled]="!formProduto.valid">Adicionar
+    <i class="material-icons right">plus</i>
+  </button>
+  </form>
+
+
+</div>
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+<ul class="collection">
+  <li class="collection-item avatar" *ngFor="let item of carrinho">
+
+    <div class="row">
+      <div class="col s8">
+        <i mz-icon [align]="'left'" [icon]="'smoking_rooms'" [size]="'medium'">
+        </i>
+        <span class="title">{{ item.qtd }} x {{ item.produto.nomeProduto }} </span>
+        <p> {{ item.qtd * item.produto.valor | currency: "BRL": true }} <br>
+        </p>
+
+      </div>
+
+      <div class="col s4">
+
+        <div>
+          <button class="btn waves-effect waves-light red" mz-button (click)="bottomSheetModal.openModal()">
+            <i class="material-icons right">delete</i>
+          </button>
+          <mz-modal #bottomSheetModal [fixedFooter]="true" [bottomSheet]="true" [options]="modalOptions">
+            <mz-modal-header>
+              <h4>Excluir produto</h4>
+            </mz-modal-header>
+            <mz-modal-content>
+              Deseja Remover definitivamente este item?
+            </mz-modal-content>
+            <mz-modal-footer>
+              <button mz-button [flat]="true" mz-modal-close>Cancelar</button>
+              <button mz-button [flat]="true" mz-modal-close (click)="remover(item.produto._id)">Remover</button>
+            </mz-modal-footer>
+          </mz-modal>
+        </div>
+
+      </div>
+    </div>
+
+  </li>
+
+</ul>
+
+<div class="row" *ngIf="carrinho.length > 0">
+  <button class="btn waves-effect waves-light right" type="submit" name="action" (click)="concluirVenda()"
+  [disabled]="!formProduto.valid">Fechar Pedido
+  <i class="material-icons right">plus</i>
+</button>
+
+</div>

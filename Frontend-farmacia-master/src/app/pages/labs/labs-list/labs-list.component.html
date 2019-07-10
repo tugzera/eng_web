@@ -1,0 +1,49 @@
+<ul class="collection">
+  <li class="collection-item avatar" *ngFor="let lab of laboratorios" >
+
+    <div class="row">
+      <div class="col s8">
+          <i mz-icon
+          [align]="'left'"
+          [icon]="'business'"
+          [size]="'medium'">
+        </i>
+        <span class="title">{{ lab.nome }}</span>
+        <p>Razão Social: {{ lab.razaoSocial }} <br>
+          CNPJ: {{ lab.cnpj }}
+        </p>
+
+      </div>
+
+      <div class="col s4">
+        <button class="btn waves-effect waves-light" (click)="editar(lab._id)">
+          <i class="material-icons right">edit</i>
+        </button>
+<div>
+    <button class="btn waves-effect waves-light red" mz-button (click)="bottomSheetModal.openModal()">
+        <i class="material-icons right">delete</i>
+    </button>
+    <mz-modal #bottomSheetModal [fixedFooter]="true" [bottomSheet]="true" [options]="modalOptions">
+        <mz-modal-header>
+          <h4>Excluir Laboratório</h4>
+        </mz-modal-header>
+        <mz-modal-content>
+          Deseja Remover definitivamente este item?
+        </mz-modal-content>
+        <mz-modal-footer>
+          <button mz-button [flat]="true" mz-modal-close>Cancelar</button>
+          <button mz-button [flat]="true" mz-modal-close (click)="remover(lab._id)">Remover</button>
+        </mz-modal-footer>
+      </mz-modal>
+</div>
+          
+      </div>
+    </div>
+
+  </li>
+
+</ul>
+
+<a class="btn-floating right btn-large waves-effect waves-light blue margin-10" (click)="add()"><i class="material-icons">add</i></a>
+
+

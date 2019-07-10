@@ -1,0 +1,166 @@
+<div class="row">
+  <form class="col s12" [formGroup]="form">
+    <div class="row">
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Nome do Produto'" [validate]="true" [dataError]="'Name is invalid'"
+            [dataSuccess]="'Name is valid'" id="name-input" placeholder="Enter your name" length="150" type="text"
+            formControlName="nomeProduto">
+        </mz-input-container>
+      </div>
+
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Valor'" [validate]="true" [dataError]="'valor is invalid'"
+            [dataSuccess]="'valor is valid'" id="valor-input" placeholder="Enter with valor" 
+            formControlName="valor">
+        </mz-input-container>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="input-field col s4">
+        <mz-input-container>
+
+          <input mz-input [label]="'Codigo do Produto'" [validate]="true" [dataError]="'CodigoProduto is invalid'"
+            [dataSuccess]="'CodigoProduto is valid'" id="CodigoProduto-input" placeholder="Enter your Codigo Produto"
+            formControlName="codProduto">
+        </mz-input-container>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Descricão'" [validate]="true" [dataError]="'Descricao is invalid'"
+            [dataSuccess]="'Descricao is valid'" id="descricao-input" placeholder="Enter your Descricao" 
+            formControlName="descricao">
+        </mz-input-container>
+      </div>
+
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Registro MS'" [validate]="true" [dataError]="'registroMs is invalid'"
+            [dataSuccess]="'registroMs is valid'" id="registroMs-input" placeholder="Enter your registroMs"
+            formControlName="registroMs">
+        </mz-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Fator'" [validate]="true" [dataError]="'fator is invalid'"
+            [dataSuccess]="'fator is valid'" id="fator-input" placeholder="Enter your fator" 
+            formControlName="fator">
+        </mz-input-container>
+      </div>
+
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Laboratório'" [validate]="true" [dataError]="'lab is invalid'"
+            [dataSuccess]="'lab is valid'" id="lab-input" placeholder="Enter your lab"
+            formControlName="lab">
+        </mz-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Princípio Ativo'" [validate]="true" [dataError]="'principioAtivo is invalid'"
+            [dataSuccess]="'principioAtivo is valid'" id="principioAtivo-input" placeholder="Enter your principioAtivo" 
+            formControlName="principioAtivo">
+        </mz-input-container>
+      </div>
+
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Restrição'" [validate]="true" [dataError]="'restricao is invalid'"
+            [dataSuccess]="'restricao is valid'" id="restricao-input" placeholder="Enter your restricao"
+            formControlName="restricao">
+        </mz-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'GTIN EAN'" [validate]="true" [dataError]="'gtinEAN is invalid'"
+            [dataSuccess]="'gtinEAN is valid'" id="gtinEAN-input" placeholder="Enter your gtinEAN" 
+            formControlName="gtinEAN">
+        </mz-input-container>
+      </div>
+
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Marca'" [validate]="true" [dataError]="'marca is invalid'"
+            [dataSuccess]="'marca is valid'" id="marca-input" placeholder="Enter your marca"
+            formControlName="marca">
+        </mz-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Peso'" [validate]="true" [dataError]="'peso is invalid'"
+            [dataSuccess]="'peso is valid'" id="peso-input" placeholder="Enter your peso" 
+            formControlName="peso">
+        </mz-input-container>
+      </div>
+
+<!--       <div class="input-field col s6">
+        <mz-input-container>
+
+          <input mz-input [label]="'Dosagem'" [validate]="true" [dataError]="'Dosagem is invalid'"
+            [dataSuccess]="'Dosagem is valid'" id="dosagem-input" placeholder="Enter your Dosagem"
+            formControlName="Dosagem">
+        </mz-input-container>
+      </div> -->
+    </div>
+    <div class="row">
+      <p>
+        <label>
+          <mz-checkbox-container>
+            <input mz-checkbox [label]="'Ativo'" id="checkbox-id" type="checkbox" formControlName="status">
+          </mz-checkbox-container>
+        </label>
+      </p>
+
+    </div>
+
+  </form>
+
+</div>
+
+
+<div>
+  <button class="btn waves-effect waves-light red" mz-button (click)="bottomSheetModal.openModal()">
+    <i class="material-icons right">arrow_back</i>
+  </button>
+  <mz-modal #bottomSheetModal [fixedFooter]="true" [bottomSheet]="true" [options]="modalOptions">
+    <mz-modal-header>
+      <h4>Voltar para listagem de Laboratórios</h4>
+    </mz-modal-header>
+    <mz-modal-content>
+      Deseja voltar sem salvar este item?
+    </mz-modal-content>
+    <mz-modal-footer>
+      <button mz-button [flat]="true" mz-modal-close>Continuar nesta Página</button>
+      <button mz-button [flat]="true" mz-modal-close (click)="voltar()">Voltar</button>
+    </mz-modal-footer>
+  </mz-modal>
+
+  <button class="btn waves-effect waves-light right" type="submit" name="action" (click)="salvar()"
+    [disabled]="!form.valid">Salvar
+    <i class="material-icons right">save</i>
+  </button>
+</div>

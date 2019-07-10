@@ -1,0 +1,240 @@
+<div class="row">
+  <form class="col s12" [formGroup]="form">
+    <div class="row">
+      <div class="input-field col s6">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'Nome'"
+                [validate]="true"
+                [dataError]="'Name is invalid'"
+                [dataSuccess]="'Name is valid'"
+                id="name-input"
+                placeholder="Enter your name"
+                length="150"
+                type="text"
+                formControlName="nome">
+            </mz-input-container>
+      </div>
+      <div class="input-field col s6">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'Razão Social'"
+                [validate]="true"
+                [dataError]="'Razão Social is invalid'"
+                [dataSuccess]="'Razão Social is valid'"
+                id="razaoSocial-input"
+                placeholder="Enter your razaoSocial"
+                length="150"
+                type="text"
+                formControlName="razaoSocial">
+            </mz-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s4">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'Telefone'"
+                [validate]="true"
+                [dataError]="'Telefone is invalid'"
+                [dataSuccess]="'Telefone is valid'"
+                id="telefone-input"
+                placeholder="Enter your telefone"
+                formControlName="telefone">
+            </mz-input-container>
+      </div>
+
+      <div class="input-field col s4">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'Email'"
+                [validate]="true"
+                [dataError]="'Email is invalid'"
+                [dataSuccess]="'Email is valid'"
+                id="email-input"
+                placeholder="Enter your email"
+                type="email"
+                formControlName="email">
+            </mz-input-container>
+      </div>
+
+      <div class="input-field col s4">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'CNPJ'"
+                [validate]="true"
+                [dataError]="'CNPJ is invalid'"
+                [dataSuccess]="'CNPJ is valid'"
+                id="cnpj-input"
+                placeholder="Enter your cnpj"
+                formControlName="cnpj">
+            </mz-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <p>
+        <label>
+            <mz-checkbox-container>
+                <input mz-checkbox
+                  [label]="'Ativo'"
+                  id="checkbox-id"
+                  type="checkbox"
+                  formControlName="status">
+              </mz-checkbox-container>
+        </label>
+
+      </p>
+    </div>
+
+  </form>
+
+</div>
+
+<div class="row">
+  <form class="col s12" [formGroup]="formAddress">
+    <div class="row">
+      <div class="input-field col s6">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'Logradouro'"
+                [validate]="true"
+                [dataError]="'Logradouro is invalid'"
+                [dataSuccess]="'Logradouro is valid'"
+                id="logradouro-input"
+                placeholder="Enter your logradouro"
+                length="150"
+                formControlName="rua">
+            </mz-input-container>
+      </div>
+      <div class="input-field col s6">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'CEP'"
+                [validate]="true"
+                [dataError]="'CEP is invalid'"
+                [dataSuccess]="'CEP is valid'"
+                id="cep-input"
+                placeholder="Enter your cep"
+                formControlName="cep">
+            </mz-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s4">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'Cidade'"
+                [validate]="true"
+                [dataError]="'Cidade is invalid'"
+                [dataSuccess]="'Cidade is valid'"
+                id="cidade-input"
+                placeholder="Enter your cidade"
+                length="150"
+                formControlName="cidade">
+            </mz-input-container>
+      </div>
+
+      <div class="input-field col s4">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'UF'"
+                [validate]="true"
+                [dataError]="'UF is invalid'"
+                [dataSuccess]="'UF is valid'"
+                id="uf-input"
+                placeholder="Enter your UF"
+                length="2"
+                formControlName="uf">
+            </mz-input-container>
+      </div>
+
+      <div class="input-field col s4">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'Número'"
+                [validate]="true"
+                [dataError]="'Número is invalid'"
+                [dataSuccess]="'Número is valid'"
+                id="numero-input"
+                placeholder="Enter your número"
+                formControlName="numero">
+            </mz-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'Complemento'"
+                [validate]="true"
+                [dataError]="'Complemento is invalid'"
+                [dataSuccess]="'Complemento is valid'"
+                id="complemento-input"
+                placeholder="Enter your complemento"
+                length="150"
+                formControlName="complemento">
+            </mz-input-container>
+      </div>
+      <div class="input-field col s6">
+          <mz-input-container>
+
+              <input mz-input
+      
+                [label]="'Bairro'"
+                [validate]="true"
+                [dataError]="'Bairro is invalid'"
+                [dataSuccess]="'Bairro is valid'"
+                id="bairro-input"
+                placeholder="Enter your bairro"
+                formControlName="bairro">
+            </mz-input-container>
+      </div>
+    </div>
+
+  </form>
+  <div>
+      <button class="btn waves-effect waves-light red" mz-button (click)="bottomSheetModal.openModal()">
+          <i class="material-icons right">arrow_back</i>
+      </button>
+      <mz-modal #bottomSheetModal [fixedFooter]="true" [bottomSheet]="true" [options]="modalOptions">
+          <mz-modal-header>
+            <h4>Voltar para listagem de Laboratórios</h4>
+          </mz-modal-header>
+          <mz-modal-content>
+            Deseja voltar sem salvar este item?
+          </mz-modal-content>
+          <mz-modal-footer>
+            <button mz-button [flat]="true" mz-modal-close>Continuar nesta Página</button>
+            <button mz-button [flat]="true" mz-modal-close (click)="voltar()" >Voltar</button>
+          </mz-modal-footer>
+        </mz-modal>
+  
+    <button class="btn waves-effect waves-light right" type="submit" name="action" (click)="salvar()" [disabled]="!form.valid || !formAddress.valid">Salvar
+      <i class="material-icons right">save</i>
+    </button>
+  </div>
+</div>
+
+

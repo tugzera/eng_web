@@ -1,0 +1,32 @@
+<header>
+<!--   <nav class="nav-extended #00bfa5 teal accent-4">
+      <div class="row">
+          <div class="container nav-wrapper">
+              <a class="center" href='index.html'><img class="card-image" width="60" src="assets/logo.png"></a>
+          </div>
+          <div class="container nav-content hide-on-med-and-down">
+
+              <a mz-button id="btn-pesquisar" routerLink="/vendas" class="btn" >VENDER</a>
+              <a mz-button  routerLink="/clientes" class="btn" >CLIENTE</a>
+              <a mz-button  routerLink="/funcionarios" class="btn">FUNCIONARIO</a>
+              <a mz-button  routerLink="/fornecedores" class="btn">FORNECEDOR</a>
+              <a mz-button  class="btn" routerLink="/labs">LABORATORIO</a>
+              <a mz-button  class="btn" routerLink="/produtos">PRODUTO</a>
+
+          </div>
+      </div>
+
+  </nav> -->
+
+  <mz-navbar >
+    <a href="#" class="brand-logo"><img class="card-image" width="60" src="assets/logo.png"></a>
+    <mz-navbar-item-container [align]="'right'">
+        <mz-navbar-item><a  id="btn-pesquisar" routerLink="/vendas" >VENDER</a></mz-navbar-item>
+        <mz-navbar-item><a   routerLink="/clientes" >CLIENTE</a></mz-navbar-item>
+        <mz-navbar-item><a   routerLink="/funcionarios">FUNCIONARIO</a></mz-navbar-item>
+        <mz-navbar-item><a   routerLink="/fornecedores">FORNECEDOR</a></mz-navbar-item>
+        <mz-navbar-item><a   routerLink="/labs">LABORATORIO</a></mz-navbar-item>
+        <mz-navbar-item><a   routerLink="/produtos">PRODUTO</a></mz-navbar-item>
+    </mz-navbar-item-container>
+  </mz-navbar>
+</header>
