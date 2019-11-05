@@ -21,7 +21,7 @@
     "@types/mongoose": "^5.3.24",
     "@types/restify": "^7.2.9",
     "@types/restify-cors-middleware": "^1.0.1",
-    "mongoose": "^5.4.23",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.18.10",
     "restify": "^8.2.0",
     "restify-cors-middleware": "^1.1.1",
